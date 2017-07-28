@@ -1,0 +1,28 @@
+---
+- name: playbook to install and enable httpd serviers
+  hosts: webservers
+  tasks:
+    - name: configure the firewall for http
+      firewalld:
+        service: http
+        immediate: true
+        permanent: true
+        state: enabled
+
+    - name: configure the firewall for httpd
+      firewalld:
+        service: https
+        immediate: true
+        permanent: true
+        state: enabled
+
+    - name: install httpd
+      yum:
+        name: httpd
+        state: latest
+
+    - name: start and enale the httpd service
+      service:
+        name: httpd
+        state: started
+        enabled: true
