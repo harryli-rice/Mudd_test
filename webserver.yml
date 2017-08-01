@@ -1,21 +1,21 @@
 ---
 - name: playbook to install and enable httpd serviers
-  hosts: webservers
+  hosts: stpete.rice.edu
   tasks:
-    - name: configure the firewall for http
-      firewalld:
-        service: http
-        immediate: true
-        permanent: true
-        state: enabled
-
-    - name: configure the firewall for httpd
-      firewalld:
-        service: https
-        immediate: true
-        permanent: true
-        state: enabled
-
+#    - name: configure the firewall for http
+#     firewalld:
+#        service: http
+#        immediate: true
+#        permanent: true
+#        state: enabled
+#
+#    - name: configure the firewall for httpd
+#      firewalld:
+#        service: https
+#        immediate: true
+#        permanent: true
+#        state: enabled
+#
     - name: install httpd
       yum:
         name: httpd
