@@ -24,5 +24,5 @@
     - name: start and enale the httpd service
       service:
         name: httpd
-        state: started
+        state: stopped
         enabled: true
